@@ -82,7 +82,7 @@ public enum Event<Element> {
 }
 ```
 
-In our case of a simple integer, we observe two events: a next event with the next (in this case only) element, then a complemention event.  
+In our case of a simple integer, we observe two events: a next event with the next (in this case only) element, then a completion event.  
 
 Observables can also be made from sequences.  Below, we create an observable from an array of Ints, then print out each value.
 
@@ -156,7 +156,7 @@ Observables provide a clear way to pass information to anyone who is interested.
 
 In a traditional imperative codebase, we don't just receive information.  Users of an application input commands which cause classes to update their properties and display an updated UI.  For example, imagine a simple screen with a stepper and a label displaying the stepper's current value.  Incrementing the stepper updates a property that then updates the UI.  How can we use RxSwift to model giving inputs instead of just receiving them?
 
-RxSwift has four Subject classes that are Observables, and have a method you `onNext` which you can input new values to.
+RxSwift has four Subject classes that are Observables, and have a method `onNext` which you can use to input new values.
 
 The four classes are:
 
@@ -213,7 +213,7 @@ The new string is World!
 
 ### BehaviorSubject
 
-When subscribing to a BehaviorSubject, however, you will immediately receive its most recent event.  Because of this, BehaviorSubject's must be created with an initial state to give to observers.
+When subscribing to a BehaviorSubject, however, you will immediately receive its most recent event.  Because of this, BehaviorSubject must be created with an initial state to give to observers.
 
 ```swift
 let disposeBag = DisposeBag()
@@ -237,7 +237,7 @@ The new string is World!
 
 ### Variable
 
-A Variable is just a wrapper around a BehaviorSubject.  It's behavior is the same.
+A Variable is just a wrapper around a BehaviorSubject.  Its behavior is the same.
 
 RxSwift Variable Initializer:
 
